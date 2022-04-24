@@ -9,7 +9,7 @@ use futures_util::FutureExt;
 use redis::AsyncCommands;
 use std::{
     net::SocketAddr,
-    sync::{atomic::AtomicU64, Arc, Mutex, RwLock},
+    sync::{atomic::AtomicU64, Arc, RwLock},
 };
 use tower::ServiceBuilder;
 use tower_http::add_extension::AddExtensionLayer;
@@ -38,7 +38,7 @@ async fn main() -> anyhow::Result<()> {
         .iter()
         .enumerate()
         .map(|(y, row)| {
-            row.iter().enumerate().map(move |(x, pixel)| {
+            row.iter().enumerate().map(move |(x, _)| {
                 (u64::try_from(y).unwrap() * u64::try_from(CANVAS_WIDTH).unwrap())
                     + u64::try_from(x).unwrap()
             })
