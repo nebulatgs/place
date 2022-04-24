@@ -11,7 +11,7 @@ export default function Home() {
 		const id = ctx.createImageData(1, 1);
 		const d = id.data;
 
-		const socket = new WebSocket("ws://localhost:4000/ws/canvas");
+		const socket = new WebSocket("wss://place-api.nebsplay.space/ws/canvas");
 		const sendPixel = (x: number, y: number, col: number) => {
 			const coords = new Uint16Array([x, y]);
 			const color = new Uint32Array([col]);
