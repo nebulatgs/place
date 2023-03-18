@@ -64,7 +64,7 @@ export default function Home() {
 		const id = ctx.createImageData(1, 1);
 		const d = id.data;
 
-		const socket = new WebSocket("wss://place-api.nebsplay.space/ws/canvas");
+		const socket = new WebSocket("wss://rplace-api.up.railway.app/ws/canvas");
 
 		// Listen for messages
 		socket.addEventListener("message", async (event) => {
